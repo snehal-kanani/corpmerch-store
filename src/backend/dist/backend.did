@@ -1,0 +1,85 @@
+type UpdateProductInput = 
+ record {
+   category: Category;
+   description: text;
+   featured: bool;
+   id: ProductId;
+   imageUrl: text;
+   name: text;
+   price: float64;
+   stockQty: nat;
+ };
+type Timestamp = int;
+type SortOrder = 
+ variant {
+   featured;
+   newest;
+   priceAsc;
+   priceDesc;
+ };
+type ProductId = nat;
+type ProductFilter = 
+ record {
+   category: opt Category;
+   searchQuery: opt text;
+   sortOrder: opt SortOrder;
+ };
+type Product = 
+ record {
+   category: Category;
+   createdAt: Timestamp;
+   description: text;
+   featured: bool;
+   id: ProductId;
+   imageUrl: text;
+   name: text;
+   price: float64;
+   stockQty: nat;
+   updatedAt: Timestamp;
+ };
+type CreateProductInput = 
+ record {
+   category: Category;
+   description: text;
+   featured: bool;
+   imageUrl: text;
+   name: text;
+   price: float64;
+   stockQty: nat;
+ };
+type ContactSubmission = 
+ record {
+   createdAt: Timestamp;
+   email: text;
+   id: ContactId;
+   message: text;
+   name: text;
+ };
+type ContactInput = 
+ record {
+   email: text;
+   message: text;
+   name: text;
+ };
+type ContactId = nat;
+type Category = 
+ variant {
+   bag;
+   cap;
+   tshirt;
+ };
+type AdminLoginResult = 
+ variant {
+   err: text;
+   ok: text;
+ };
+service : {
+  addProduct: (token: text, input: CreateProductInput) -> (Product);
+  adminLogin: (email: text, password: text) -> (AdminLoginResult);
+  deleteProduct: (token: text, id: ProductId) -> (bool);
+  getProduct: (id: ProductId) -> (opt Product) query;
+  listContactSubmissions: (token: text) -> (vec ContactSubmission) query;
+  listProducts: (filter: ProductFilter) -> (vec Product) query;
+  submitContactForm: (input: ContactInput) -> (ContactSubmission);
+  updateProduct: (token: text, input: UpdateProductInput) -> (bool);
+}

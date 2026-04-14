@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Lora";
+    --font-body: "Satoshi";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.75rem;
+
+    --background: 0.96 0.015 75;
+    --foreground: 0.2 0.03 50;
+    --card: 0.98 0.01 75;
+    --card-foreground: 0.2 0.03 50;
+    --popover: 0.98 0.01 75;
+    --popover-foreground: 0.2 0.03 50;
+
+    --primary: 0.5 0.16 30;
+    --primary-foreground: 0.96 0.01 30;
+
+    --secondary: 0.3 0.04 250;
+    --secondary-foreground: 0.92 0.01 75;
+    --muted: 0.92 0.02 75;
+    --muted-foreground: 0.5 0.02 50;
+
+    --accent: 0.5 0.16 30;
+    --accent-foreground: 0.96 0.01 30;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.025 75;
+    --input: 0.88 0.025 75;
+    --ring: 0.5 0.16 30;
+
+    --chart-1: 0.5 0.16 30;
+    --chart-2: 0.3 0.04 250;
+    --chart-3: 0.65 0.18 145;
+    --chart-4: 0.7 0.15 80;
+    --chart-5: 0.55 0.15 150;
+
+    --sidebar: 0.3 0.04 250;
+    --sidebar-foreground: 0.92 0.01 75;
+    --sidebar-primary: 0.5 0.16 30;
+    --sidebar-primary-foreground: 0.96 0.01 30;
+    --sidebar-accent: 0.92 0.02 75;
+    --sidebar-accent-foreground: 0.3 0.04 250;
+    --sidebar-border: 0.25 0.03 250;
+    --sidebar-ring: 0.5 0.16 30;
+  }
+
+  .dark {
+    --background: 0.16 0.02 280;
+    --foreground: 0.92 0.01 75;
+    --card: 0.2 0.025 280;
+    --card-foreground: 0.92 0.01 75;
+    --popover: 0.25 0.03 280;
+    --popover-foreground: 0.92 0.01 75;
+
+    --primary: 0.65 0.22 30;
+    --primary-foreground: 0.16 0.02 280;
+
+    --secondary: 0.3 0.04 250;
+    --secondary-foreground: 0.82 0.01 75;
+    --muted: 0.3 0.04 250;
+    --muted-foreground: 0.55 0.015 75;
+
+    --accent: 0.65 0.22 30;
+    --accent-foreground: 0.16 0.02 280;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.92 0.01 75;
+
+    --border: 0.32 0.03 280;
+    --input: 0.32 0.03 280;
+    --ring: 0.65 0.22 30;
+
+    --chart-1: 0.65 0.22 30;
+    --chart-2: 0.3 0.04 250;
+    --chart-3: 0.65 0.18 145;
+    --chart-4: 0.7 0.15 80;
+    --chart-5: 0.55 0.15 150;
+
+    --sidebar: 0.2 0.025 280;
+    --sidebar-foreground: 0.92 0.01 75;
+    --sidebar-primary: 0.65 0.22 30;
+    --sidebar-primary-foreground: 0.16 0.02 280;
+    --sidebar-accent: 0.3 0.04 250;
+    --sidebar-accent-foreground: 0.82 0.01 75;
+    --sidebar-border: 0.32 0.03 280;
+    --sidebar-ring: 0.65 0.22 30;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @font-face {
+    font-family: "Lora";
+    src: url("/assets/fonts/Lora.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  .text-hero {
+    @apply text-5xl md:text-7xl font-bold tracking-tight font-display;
+  }
+
+  .text-section-heading {
+    @apply text-3xl md:text-5xl font-bold tracking-tight font-display;
+  }
+
+  .text-label {
+    @apply text-sm font-semibold tracking-widest uppercase font-body;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold transition-smooth hover:opacity-90 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold transition-smooth hover:opacity-90 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-primary text-primary bg-transparent rounded-lg font-semibold transition-smooth hover:bg-primary/5 active:scale-95;
+  }
+}

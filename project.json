@@ -1,0 +1,22 @@
+{
+  "overview": "A full-stack corporate merchandise website for a manufacturer of t-shirts, caps, and bags. Features a public storefront with home, product catalog (search & filter), and contact page, plus a complete admin panel for managing products.",
+  "features": [
+    "Home page with hero, product showcase, and company info",
+    "Product catalog with real-time search and category/price filters",
+    "Product detail view with description, sizes, and colors",
+    "Contact page with phone, WhatsApp, and email links plus contact form",
+    "Admin panel with login and product management (add, edit, delete)",
+    "Image upload for products via object storage",
+    "Admin dashboard with product stats",
+    "Mobile-friendly, accessible UI for all literacy levels"
+  ],
+  "category": "ecommerce",
+  "tags": [
+    "corporate-merchandise",
+    "product-catalog",
+    "admin-panel",
+    "ecommerce",
+    "manufacturing"
+  ],
+  "last_updated": "2026-04-14T15:58:34.583Z"
+}

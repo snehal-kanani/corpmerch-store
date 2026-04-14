@@ -1,0 +1,44 @@
+// Version: 1.0.0
+type Category__8224233 = {#bag; #cap; #tshirt};
+type ContactId__95243200 = Nat;
+type ContactSubmission__137655500 =
+  {
+    createdAt : Timestamp__77860887;
+    email : Text;
+    id : ContactId__95243200;
+    message : Text;
+    name : Text
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type ProductId__442338476 = Nat;
+type Product__750902660 =
+  {
+    category : Category__8224233;
+    createdAt : Timestamp__77860887;
+    description : Text;
+    featured : Bool;
+    id : ProductId__442338476;
+    imageUrl : Text;
+    name : Text;
+    price : Float;
+    stockQty : Nat;
+    updatedAt : Timestamp__77860887
+  };
+type Timestamp__77860887 = Int;
+actor {
+  stable contacts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?ContactSubmission__137655500]];
+      var elementIndex : Nat__490723111
+    };
+  stable nextContactId : {var value : Nat};
+  stable nextProductId : {var value : Nat};
+  stable products :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Product__750902660]];
+      var elementIndex : Nat__490723111
+    }
+};
